@@ -1,0 +1,154 @@
+.index
+  .index__header
+    - if user_signed_in?
+      %h REPS
+      %ul
+        %li.modal-registe 曲登録
+        %li.modal-logout
+          =link_to "ログアウト", destroy_user_session_path, method: :delete
+    - else
+      %ul
+        %li.new-modal 新規登録
+        %li.rogin-madal ログイン
+  .scroll-header
+    - if user_signed_in?
+      %h REPS
+      %ul
+        %li.modal-registe 曲登録
+        %li.modal-logout
+          =link_to "ログアウト", destroy_user_session_path, method: :delete
+    - else
+      %ul
+        %li.new-modal 新規登録
+        %li.rogin-madal ログイン
+  .index__image
+    -# .index__image__title
+    %h REPS
+    .index__image__sentence
+      %p REPSとは?
+  .index__center
+    .index__center__song
+      .close-modal
+        %i.fas.fa-times
+      = form_with(model: @user, local: true,  id: "new_registe") do |f|
+        %h3 登録する
+        %input.index__center__song__inner{:name => "singer", :placeholder => "singer",:id=>'eee'}/
+        %input.index__center__song__inner{:name => "song", :placeholder => "song",:id=>'eee'}/
+        %input.index__center__song__btn{:type => "submit", :value => "SENT",:id=>'fff'}/
+    .denmoku2
+      .denmoku2__main
+        .denmoku2__main__header
+          精密機械につき取り扱い注意!
+        .denmoku2__main__center
+          .slide-modal.prev-btn 前へ
+          .slide-modal.next-btn 次へ
+          %ul
+            %li.slide.active 
+              .inner
+                %p 111111
+            %li.slide
+              .inner
+                %p 222222
+            %li.slide 
+              .inner
+                %p 333333
+        .denmoku2__main__footer-upper
+          %h.close-modal 戻る
+          %h 2222
+        .denmoku2__main__footer-under
+          %h REPS
+      .slide-modal.prev-btn 前へ
+      .slide-modal.next-btn 次へ
+      %ul
+        %li.slide.active 
+          .inner
+            %p 111111
+        %li.slide
+          .inner
+            %p 222222
+        %li.slide 
+          .inner
+            %p 333333
+    .signup
+      .close-modal
+        %i.fas.fa-times
+      %h1 SIGNUP
+      %form{"accept-charset" => "UTF-8", :action => "/users", :method => "post"}
+        %input{:name => "utf8", :value => "", :type => "hidden"}/
+        %input{:name => "authenticity_token", :type => "hidden",:value => "0vopqXSAxej0lk4KKOWG+YUcG2s5X+btIeQBKegvkob1KNqBEYUcJjZXNJ9bYJDpL+8AncJ0uHNFA4luEVFTAg=="}/
+        .field
+          %label{:for => "user_nickname"} 
+          %input.signup__input{:autocomplete => "list", :placeholder => "username", :name => "user[nickname]", :type => "text"}/
+        .field
+          %label{:for => "user_email"}
+          %input.signup__input{:autocomplete => "email", :placeholder => "email", :name => "user[email]", :type => "text"}/
+        .field
+          %label{:for => "user_password"}
+          %input.signup__input{"aria-autocomplete" => "list", :placeholder => "password", :name => "user[password]", :type => "text"}/
+        .actions
+          %input.first-btn{"data-disable-with" => "Sign up", :name => "commit", :type => "submit", :value => "Sign up"}/
+
+    .login
+      .close-modal
+        %i.fas.fa-times
+      %h1 LOGIN
+      %form{"accept-charset" => "UTF-8", :action => "/users/sign_in", :method => "post"}
+        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+        %input.login__input{:name => "authenticity_token", :type => "hidden", :value => "oHLlAj0JDR0syLFJq8pvBZgP3Tf2VBOuOl5VCtX7PkCHoBYqWAzU0+4Jy9zYT3kVMvzGwQ1/TTBeud1NLIX/xA=="}/
+        .field
+          %label{:for => "user_email"}
+          %input.login__input{:autocomplete => "email", :placeholder => "email", :name => "user[email]", :type => "text"}/
+        .field
+          %label{:for => "user_password"} 
+          %input.login__input{:autocomplete => "current-password", :placeholder => "password",:name => "user[password]", :type => "text"}/
+        .actions
+          %input.first-btn{"data-disable-with" => "Log in", :name => "commit", :type => "submit", :value => "Log in"}/
+
+    .index__center__index
+      -if user_signed_in?
+        .index__center__index__contents
+          %h2 登録した曲
+          - @songs.each do |song|
+            .index__center__index__contents__inner
+              .index__center__index__contents__inner__name
+                %p= song.singer
+              .index__center__index__contents__inner__name
+                %p= song.song
+            %btn-delete
+              = link_to '削除',"/songs/#{song.id}", method: :delete ,data: { confirm: '削除しますか？' }
+      -else
+        .index__center__index__contents
+          %h2 最近登録された曲
+          - @list.each do |index|
+            .index__center__index__contents__inner
+              .index__center__index__contents__inner__name
+                %p8= index.singer
+              .index__center__index__contents__inner__name
+                %p9= index.song
+    %button.topbtn
+      %i.fas.fa-arrow-up
+ 
+.denmoku
+  .denmoku__main
+    .denmoku__main__header
+      精密機械につき取り扱い注意!
+    .denmoku__main__center
+      = form_with(model: @user, local: true,  id: "new_registe") do |f|
+        %h3
+          登録する
+        %input.index__center__song__inner{:name => "singer", :placeholder => "singer"}/
+        %input.index__center__song__inner{:name => "song", :placeholder => "song"}/
+        %input.index__center__song__btn{:type => "submit", :value => "SENT"}/
+    .denmoku__main__footer-upper
+      %h.close-modal 戻る
+      %h 2222
+    .denmoku__main__footer-under
+      %h REPS
+
+
+
+
+
+
+
+

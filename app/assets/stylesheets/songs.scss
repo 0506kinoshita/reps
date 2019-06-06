@@ -1,0 +1,69 @@
+@mixin framework($image){
+  width:300px;
+  padding:40px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align: center;
+  display:none;
+  background-image:url($image);
+  background-size: contain;
+  // background-repeat: no-repeat;
+  h1{
+    color:white;
+    text-transform:uppercase;
+    font-weight: 500;
+  }
+}
+
+@mixin first-form($padding,$width){
+  border:0;
+  background:none;
+  display:block;
+  margin:20px auto;
+  text-align:center;
+  border:2px solid orange;
+  outline:none;
+  color:white;
+  border-radius:30px;
+  transition:0.25s;
+  padding:$padding;
+  width:$width;
+}
+
+.signup{
+
+  @include framework("IMG_1715.jpeg");
+  &__input{
+    @include first-form(10px,180px);
+    &:focus{
+      width:280px;
+      border-color:#2ecc71;
+    }
+  }
+}
+
+.login{
+  @include framework("IMG_1709.jpeg");
+  &__input{
+    @include first-form(10px,180px);
+    &:focus{
+      width:280px;
+      border-color:#2ecc71;
+      background: none;
+    }
+  }
+}
+
+.first-btn{
+  @include first-form(10px 35px,auto);
+  cursor:pointer;
+  &:hover{
+    background:orange;
+    border:2px solid #2ecc71;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
