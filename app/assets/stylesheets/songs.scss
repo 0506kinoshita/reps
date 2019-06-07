@@ -32,7 +32,6 @@
 }
 
 .signup{
-
   @include framework("IMG_1715.jpeg");
   &__input{
     @include first-form(10px,180px);

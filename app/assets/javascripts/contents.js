@@ -27,10 +27,10 @@ $(function() {
 
 $(function() {
   $(".index__image__sentence").click(function(){
-    $(".denmoku").fadeIn();
+    $(".denmoku2").fadeIn();
   });
   $(".close-modal").click(function(){
-    $(".denmoku").fadeOut();
+    $(".denmoku2").fadeOut();
   });
 });
 

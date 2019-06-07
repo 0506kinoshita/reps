@@ -1,0 +1,18 @@
+.signup
+  .close-modal
+    %i.fas.fa-times
+  %h1 SIGNUP
+  %form{"accept-charset" => "UTF-8", :action => "/users", :method => "post"}
+    %input{:name => "utf8", :value => "", :type => "hidden"}/
+    %input{:name => "authenticity_token", :type => "hidden",:value => "0vopqXSAxej0lk4KKOWG+YUcG2s5X+btIeQBKegvkob1KNqBEYUcJjZXNJ9bYJDpL+8AncJ0uHNFA4luEVFTAg=="}/
+    .field
+      %label{:for => "user_nickname"} 
+      %input.signup__input{:autocomplete => "list", :placeholder => "username", :name => "user[nickname]", :type => "text"}/
+    .field
+      %label{:for => "user_email"}
+      %input.signup__input{:autocomplete => "email", :placeholder => "email", :name => "user[email]", :type => "text"}/
+    .field
+      %label{:for => "user_password"}
+      %input.signup__input{"aria-autocomplete" => "list", :placeholder => "password", :name => "user[password]", :type => "text"}/
+    .actions
+      %input.first-btn{"data-disable-with" => "Sign up", :name => "commit", :type => "submit", :value => "Sign up"}/

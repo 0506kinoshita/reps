@@ -1,0 +1,20 @@
+.denmoku
+  .denmoku__main
+    .denmoku__main__header
+      精密機械につき取り扱い注意!
+    .denmoku__main__center
+      .denmoku__main__center__inner
+        = form_with(model: @user, local: true,  id: "new_registe") do |f|
+          .denmoku__main__center__inner__word
+            %h.close-modal TOP
+            %h1 TOP ＞ 登録
+          .input-title　歌手名を入力してください
+          %input.input-human{:name => "singer", :placeholder => "singer"}/
+          .input-title　曲名入力を入力してください
+          %input.input-song{:name => "song", :placeholder => "song"}/
+          %input.input-btn{:type => "submit", :value => "送信する"}/
+    .denmoku__main__footer-upper
+      %h.close-modal 戻る
+      -# %h 2222
+    .denmoku__main__footer-under
+      %h REPS
