@@ -1,25 +1,22 @@
-
-.slide-modal{
-  // width:300px;
-  // height:500px;
-  margin:0 auto;
-}
-.prev-btn{
-  cursor: pointer;
-  float: left;
-  display: none;
-}
-.next-btn{
-  cursor: pointer;
-  float: right;
-  
-}
 .slide{
   display: none;
 }
 .active{
   display: block;
 }
+
+.inner{
+  background: #eee;
+  margin-top:30px;
+  padding:10px 15px;
+  p{
+    display: block;
+    font-size:45px;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
 .denmoku2{
   display: none;
   position:absolute;
@@ -32,7 +29,6 @@
     width:800px;
     border-left:10px solid gold;
     border-right:10px solid gold;
-    // border-top: 5px solid white;
     margin:0 auto;
     &__header{
       padding:8px 0;
@@ -46,6 +42,21 @@
       height:300px;
       width:700px;
       margin:0 auto;
+      .slide-modal{
+        margin:0 auto;
+        border:1px solid black;
+        border-radius: 10px;
+
+      }
+      .prev-btn{
+        cursor: pointer;
+        float: left;
+        display: none;
+      }
+      .next-btn{
+        cursor: pointer;
+        float: right;
+      }
     }
     &__footer-upper{
       text-align: right;
@@ -54,9 +65,13 @@
 
       h{
         color:white;
-        margin-right:30px;
+        margin-right:60px;
         cursor: pointer;
-        // display: inline-block;
+        &:hover{
+          font-size:25px;
+          color:red;
+          transition: 0.5s;
+        }
       }
     }
     &__footer-under{

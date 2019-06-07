@@ -27,14 +27,6 @@
     .index__image__sentence
       %p REPSとは?
   .index__center
-    .index__center__song
-      .close-modal
-        %i.fas.fa-times
-      = form_with(model: @user, local: true,  id: "new_registe") do |f|
-        %h3 登録する
-        %input.index__center__song__inner{:name => "singer", :placeholder => "singer",:id=>'eee'}/
-        %input.index__center__song__inner{:name => "song", :placeholder => "song",:id=>'eee'}/
-        %input.index__center__song__btn{:type => "submit", :value => "SENT",:id=>'fff'}/
     .denmoku2
       .denmoku2__main
         .denmoku2__main__header
@@ -45,16 +37,16 @@
           %ul
             %li.slide.active 
               .inner
-                %p 111111
+                %p RIPSとはカラオケ好きのあなたへお送りするレパートリー管理アプリです
             %li.slide
               .inner
-                %p 222222
+                %p 最近熱い曲をいいねしておいたり、今度歌いたい曲のメモに使ったり使い方は無限大
             %li.slide 
               .inner
-                %p 333333
+                %p さあ使ってみよう！
         .denmoku2__main__footer-upper
           %h.close-modal 戻る
-          %h 2222
+          -# %h 2222
         .denmoku2__main__footer-under
           %h REPS
       .slide-modal.prev-btn 前へ
@@ -133,22 +125,20 @@
     .denmoku__main__header
       精密機械につき取り扱い注意!
     .denmoku__main__center
-      = form_with(model: @user, local: true,  id: "new_registe") do |f|
-        %h3
-          登録する
-        %input.index__center__song__inner{:name => "singer", :placeholder => "singer"}/
-        %input.index__center__song__inner{:name => "song", :placeholder => "song"}/
-        %input.index__center__song__btn{:type => "submit", :value => "SENT"}/
+      .denmoku__main__center__inner
+        = form_with(model: @user, local: true,  id: "new_registe") do |f|
+          .denmoku__main__center__inner__word
+            %h.close-modal TOP
+            %h1 TOP ＞ 登録
+          .input-title　歌手名を入力してください
+          %input.input-human{:name => "singer", :placeholder => "singer"}/
+          .input-title　曲名入力を入力してください
+          %input.input-song{:name => "song", :placeholder => "song"}/
+          %input.input-btn{:type => "submit", :value => "送信する"}/
     .denmoku__main__footer-upper
       %h.close-modal 戻る
-      %h 2222
+      -# %h 2222
     .denmoku__main__footer-under
       %h REPS
-
-
-
-
-
-
 
 

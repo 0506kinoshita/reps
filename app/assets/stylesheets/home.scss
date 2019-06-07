@@ -34,7 +34,6 @@
     ul{
       text-align: right;
       margin:10px 60px 0 0; 
-      // line-height: 50px;
 
       li{
         list-style: none;
@@ -54,7 +53,6 @@
     background-image:url("IMG_1716.jpeg"); 
     background-size: contain;
     height:300px;
-
     
       h{
         font-size:100px;
@@ -63,7 +61,6 @@
       }
     
     &__sentence{
-
       p{
         font-size:20px;
         color:white;
@@ -76,7 +73,6 @@
   }
   &__center{
     width:100%;
-    // background-color: #E0FFFF;
     &__song{
       width:300px;
       padding:30px;
@@ -88,30 +84,20 @@
       display:none;
       background-image:url("IMG_1716.jpeg");
       background-size: contain;
-      // background-repeat: no-repeat;
       background: none;
       &__inner{
         width:100%;
         padding:5px 0;
-        // color:#fff;
         margin-bottom: 30px;
-        // background:transparent; 
         border-bottom:1px solid #fff;
         outline :none;
-        // background: none;
         border:none;
-      }
-      // &__inner[p]}
-      // }
-      &__btn{
-
       }
     }
     &__index{
       &__contents{
         &__inner{
           border-bottom:1px solid orange;
-          // margin-bottom: 25px;
           display: inline-block;
           width:80%;
           &:hover{
@@ -152,23 +138,8 @@
   }
 }
 
-.index__center__registe{
-  display: none;
-}
 .fa-times{
   color:gray;
-}
-
-
-.index__center__song__inner[placeholder]{
-  // color:orange;
-  font-size:20px;
-  // position: relative;
-}
-.index__center__song__inner[placeholder]:focus{
-  top:-20px;
-  font-size:10px;
-  // position: absolute;
 }
 
 .topbtn{
@@ -186,14 +157,11 @@
   border:none;
   outline: none;
   opacity:0.8;
-
   &:hover{
     opacity:1;
     color:orange;
   }
 }
-
-
 
 .denmoku{
   display: none;
@@ -216,12 +184,104 @@
       text-align: center;
     }
     &__center{
-      background-color:white;
       border:5px solid silver;
       height:300px;
       width:700px;
       margin:0 auto;
+      background-image:url(IMG_1900.png);
+      background-size:contain;
+      padding-top:5px;
+      &__inner{
+        margin:10px;
+        display:block;
+        &__word{
+
+        width:100%;
+        margin-bottom:4px;
+          h{
+            background:green; 
+            color:white;
+            border-radius: 3px;
+            display:inline-block;
+            font-size:20px;
+            width:10%;
+            box-shadow: 2px 2px silver;
+            text-align: center;
+            cursor: pointer;
+            &:hover{
+              transition: 0.3s;
+              color:lighten(red,10%);
+            }
+            &:active{
+              box-shadow: none;
+              position: relative;
+              top:2px;
+              left:2px;
+            }
+          }
+          h1{
+            background: white;
+            border-radius: 3px;
+            display:inline-block;
+            width:86.2%;
+            font-size:20px;
+            box-shadow: 3px 3px silver;
+            padding-left:20px;
+
+          }
+        }
+        input{
+          border:none;
+          width: 100%;
+          // display: block;
+          margin:30 0px;
+          box-shadow: 3px 3px silver;
+          margin-top:8px;
+
+        }
+        .input-human{
+          padding:10px 0;
+          border-radius: 5px;
+          outline: none;
+          font-weight:bold;
+
+        }
+        .input-title{
+          background-color:white;
+          border:none;
+          width: 100%;
+          margin:30 0px;
+          box-shadow: 3px 3px silver;
+          margin-top:8px;
+          padding:10px 0;
+          border-radius: 5px;
+          outline: none;
+        }
+        .input-song{
+          padding:10px 0;
+          border-radius: 5px;
+          outline: none;
+          font-weight:bold;
+
+        }
+        .input-btn{
+          margin:8px 20px;
+          padding:3px 0;
+          width:80px;
+          border-radius:5px; 
+          outline: none;
+          float:right;
+          &:active{
+            box-shadow: none;
+            position: relative;
+            top:3px;
+            left:3px;
+          }
+
+        }
+      }
     }
+
     &__footer-upper{
       text-align: right;
       height: 30px;
@@ -229,9 +289,13 @@
 
       h{
         color:white;
-        margin-right:30px;
+        margin-right:60px;
         cursor: pointer;
-        // display: inline-block;
+        &:hover{
+          font-size:25px;
+          color:red;
+          transition: 0.5s;
+        }
       }
     }
     &__footer-under{
@@ -240,11 +304,13 @@
       text-align: center;
       h{
         color:white;
-        font-size:30px;
+        font-size:35px;
+        font-family:cursive;
       }
     }
   }
 }
+
 
 .scroll-header{
   width:100%;
@@ -259,12 +325,10 @@
     float:left;
     margin-left: 60px;
     font-family:fantasy;
-    
   }
   ul{
     text-align: right;
     margin:10px 60px 0 0; 
-    // line-height: 50px;
 
     li{
       list-style: none;
@@ -279,5 +343,4 @@
       }
     }
   }
-
 }

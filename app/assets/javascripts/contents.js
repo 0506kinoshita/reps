@@ -27,15 +27,14 @@ $(function() {
 
 $(function() {
   $(".index__image__sentence").click(function(){
-    $(".denmoku2").fadeIn();
+    $(".denmoku").fadeIn();
   });
   $(".close-modal").click(function(){
-    $(".denmoku2").fadeOut();
+    $(".denmoku").fadeOut();
   });
 });
 
 $(function(){
-
   $(window).scroll(function(){
     if($(this).scrollTop()>20){
       $('.topbtn').fadeIn();
