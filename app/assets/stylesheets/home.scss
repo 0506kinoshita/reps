@@ -54,15 +54,19 @@
         color:white;
         font-family:cursive;
       }
-    &__sentence{
-      p{
-        font-size:20px;
-        color:white;
-        cursor: pointer;
-        border:2px solid white;
-        display: inline-block;
+      &__sentence{
+        text-align:center;
+        margin-top:40px;
+        p{
+          font-size:20px;
+          color:white;
+          cursor: pointer;
+          border:1px solid white;
+          display: inline-block;
+          padding:0 10px; 
+      
+        }
       }
-    }
   }
   &__center{
     width:100%;
