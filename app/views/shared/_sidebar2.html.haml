@@ -1,0 +1,7 @@
+.sidebar2
+  .sidebar2__header
+    %h MENU
+  .sidebar2__contents
+    %p.new-modal-side 新規登録
+    %p.rogin-madal-side ログイン
+    %p1=link_to "ログアウト", destroy_user_session_path, method: :delete

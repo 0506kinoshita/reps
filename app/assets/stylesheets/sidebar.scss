@@ -1,0 +1,48 @@
+@mixin sidebar-word{
+  text-align: center;
+  color:black;
+  text-decoration: none;
+  display: block;
+  padding: 10px 5px;
+  height: 25px;
+  font-size:14x;
+  font-weight: bold;
+  margin-top:30px;
+  &:hover{
+    transition: 0.3s;
+    background: white;
+    font-size:17px;
+    color:orange;
+    font-weight: bold;
+  }
+}
+@mixin menu{
+  display: none;
+  position: fixed;
+  top:200px;
+  right:20px;
+  width:200px;
+  background-color:#FFCC33;
+  padding:20px 0;
+  &__header{
+    text-align: center;
+    h{
+      font-weight: bold;
+      font-family:cursive;
+      font-size:25px;
+    }
+  }
+  &__contents{
+    height: 200px;
+    a{
+      @include sidebar-word;
+    }
+    p{
+      @include sidebar-word;
+    }
+  }
+}
+
+.sidebar,.sidebar2{
+  @include menu;
+}

@@ -1,18 +1,22 @@
-@mixin framework($image){
+@mixin framework($image,$height){
   width:300px;
   padding:40px;
   position:absolute;
+  position: fixed;
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
   text-align: center;
   display:none;
   background-image:url($image);
-  background-size: contain;
+  background-size: cover;
+  height:$height;
   h1{
     color:white;
     text-transform:uppercase;
     font-weight: 500;
+    font-size:30px;
+    font-family:fantasy;
   }
 }
 
@@ -32,7 +36,7 @@
 }
 
 .signup{
-  @include framework("IMG_1715.jpeg");
+  @include framework("IMG_1716.jpeg",350px);
   &__input{
     @include first-form(10px,180px);
     &:focus{
@@ -43,7 +47,7 @@
 }
 
 .login{
-  @include framework("IMG_1709.jpeg");
+  @include framework("IMG_1716.jpeg",300px);
   &__input{
     @include first-form(10px,180px);
     &:focus{
@@ -64,4 +68,3 @@
     font-weight: bold;
   }
 }
-
