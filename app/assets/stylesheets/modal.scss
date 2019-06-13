@@ -1,0 +1,32 @@
+@mixin border-bottom{
+  position: relative;
+  transition :0.1s all;
+  padding:5px 5px;
+  text-align: right;
+  overflow: hidden;
+  margin:0 10px;
+}
+@mixin border-bottom-action{
+  content:"";
+  width:100%;
+  position:absolute;
+  border-bottom:5px solid orange;
+  bottom:0;
+  left:350px;
+  transition:0.4s all;
+  border-radius:40%;
+}
+
+.modal-registe,.modal-logout,.new-modal,.rogin-madal{
+  @include border-bottom;
+  &::before{
+    @include border-bottom-action;
+  }
+  &:hover::before{
+  left:0;
+  }
+}
+
+.fa-times{
+  color:gray;
+}

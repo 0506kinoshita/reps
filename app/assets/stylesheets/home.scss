@@ -1,22 +1,7 @@
-@mixin border-bottom{
-  position: relative;
-  transition :0.1s all;
-  padding:5px 5px;
-  text-align: right;
-  overflow: hidden;
-  margin:0 10px;
+@mixin atag{
+  color:black;
+  text-decoration: none;
 }
-@mixin border-bottom-action{
-  content:"";
-  width:100%;
-  position:absolute;
-  border-bottom:5px solid orange;
-  bottom:0;
-  left:350px;
-  transition:0.4s all;
-  border-radius:40%;
-}
-
 .index{
   &__header{
     display: inline-block;
@@ -39,50 +24,59 @@
         font-weight: 600;
         cursor: pointer;
         a{
-          color:black;
-          text-decoration: none;
+          @include atag;
         }
       }
     }
   }
   &__image{
-    background-image:url("IMG_1716.jpeg"); 
-    background-size: contain;
+    background-image:url("IMG_1713.jpeg"); 
+    background-size: 100%;
+    background-repeat:no-repeat;
     height:300px;
-      h{
-        font-size:100px;
+    h{
+      font-size:100px;
+      color:white;
+      font-family:cursive;
+      margin-left:30px;
+    }
+    &__sentence{
+      text-align:center;
+      margin-top:40px;
+      p{
+        font-size:20px;
         color:white;
-        font-family:cursive;
-      }
-      &__sentence{
-        text-align:center;
-        margin-top:40px;
-        p{
-          font-size:20px;
-          color:white;
-          cursor: pointer;
-          border:1px solid white;
-          display: inline-block;
-          padding:0 10px; 
-      
+        cursor: pointer;
+        border:1px solid white;
+        display: inline-block;
+        padding:0 15px;
+        &:hover{
+          padding:0 50px;
+          transition:0.5s;
+          border:1px solid orange;
         }
       }
+    }
   }
   &__center{
     width:100%;
     &__index{
+      margin:30px;
       &__contents{
+        h2{
+          font-size:40px;
+        }
         &__inner{
           border-bottom:1px solid orange;
           display: inline-block;
-          width:80%;
+          width:96%;
           &:hover{
             background-color:#eee;
             transition:0.5s;
           }
           &__name{
             display:inline-block;
-            width:40%;
+            width:48%;
             text-align:center;
             p{
               font-weight: bold;
@@ -95,8 +89,7 @@
           border-radius:10px;
           display:inline-block;
           a{
-            color:black;
-            text-decoration: none;
+            @include atag;
           } 
         }
       }
@@ -104,24 +97,10 @@
   }
 }
 
-.modal-registe,.modal-logout,.new-modal,.rogin-madal{
-  @include border-bottom;
-  &::before{
-    @include border-bottom-action;
-  }
-  &:hover::before{
-  left:0;
-  }
-}
-
-.fa-times{
-  color:gray;
-}
-
 .topbtn{
   position:fixed;
-  bottom:40px;
-  right:40px;
+  bottom:70px;
+  right:90px;
   color:white;
   width:60px;
   height:60px;
@@ -146,6 +125,7 @@
   left: 0;
   background-color:#eee;
   border-bottom:7px solid blue;
+  z-index:1;
   h{
     font-size:40px;
     font-weight: 600;
@@ -163,8 +143,7 @@
       font-weight: 600;
       cursor: pointer;
       a{
-        color:black;
-        text-decoration: none;
+        @include atag;
       }
     }
   }
