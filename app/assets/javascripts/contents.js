@@ -40,14 +40,14 @@ $(function(){
       $('.topbtn').fadeIn();
       $('.sidebar').fadeIn();
       $('.sidebar2').fadeIn();
-      $('.index__center__index__contents__inner').css({
-        width:'80%'
+      $('.index__center__index__contents,.index__center__index__contents__inner').css({
+        width:'87%'
       });
     }else{
       $('.topbtn').fadeOut();
       $('.sidebar').fadeOut();
       $('.sidebar2').fadeOut();
-      $('.index__center__index__contents__inner').css({
+      $('.index__center__index__contents,.index__center__index__contents__inner').css({
         width:'96%'
       });
     }

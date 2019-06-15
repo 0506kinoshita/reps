@@ -5,7 +5,7 @@
       %ul
         %li.modal-registe 曲登録
         %li.modal-logout
-          =link_to "ログアウト", destroy_user_session_path, method: :delete
+          =link_to "ログアウト", destroy_user_session_path, method: :delete,data: { confirm: 'ログアウトしますか？' }
     - else
       %h REPS
       %ul
@@ -17,7 +17,7 @@
       %ul
         %li.modal-registe 曲登録
         %li.modal-logout
-          =link_to "ログアウト", destroy_user_session_path, method: :delete
+          =link_to "ログアウト", destroy_user_session_path, method: :delete,data: { confirm: 'ログアウトしますか？' }
     - else
       %h REPS
       %ul
@@ -31,25 +31,33 @@
     .index__center__index
       -if user_signed_in?
         .index__center__index__contents
-          %h2 登録した曲
+          .index__center__index__contents__text
+            %p1 登録した曲
+            %p2 #{@count.length}曲
+            = paginate @order
+
           - @songs.each do |song|
             .index__center__index__contents__inner
               .index__center__index__contents__inner__name
                 %p= song.singer
               .index__center__index__contents__inner__name
                 %p= song.song
-            %btn-delete
-              = link_to '削除',"/songs/#{song.id}", method: :delete ,data: { confirm: '削除しますか？' }
+              %btn-delete
+                = link_to 'DELITE',"/songs/#{song.id}", method: :delete ,data: { confirm: '削除しますか？' }
+            -# = paginate(@order)
+          .paginate
+            = paginate @order
+    
         = render"shared/sidebar"
       -else
         .index__center__index__contents
-          %h2 最近登録された曲
-          - @list.each do |index|
+          %h 最近登録された３０曲
+          - @list.first(30).each do |index|
             .index__center__index__contents__inner
               .index__center__index__contents__inner__name
-                %p8= index.singer
+                %p= index.singer
               .index__center__index__contents__inner__name
-                %p9= index.song
+                %p= index.song
         = render"shared/sidebar2"
     %button.topbtn
       %i.fas.fa-arrow-up
