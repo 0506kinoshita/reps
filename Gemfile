@@ -64,3 +64,5 @@ gem 'pry-rails'
 gem 'devise'
 gem 'haml-rails'
 gem "jquery-rails"
+gem "kaminari"
+gem 'will_paginate'

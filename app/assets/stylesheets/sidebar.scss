@@ -16,7 +16,8 @@
     font-weight: bold;
   }
 }
-@mixin menu{
+
+.sidebar,.sidebar2{
   display: none;
   position: fixed;
   top:200px;
@@ -31,9 +32,13 @@
       font-family:cursive;
       font-size:25px;
     }
+    p{
+      margin-top:10px;
+      font-size:18px;
+      font-family: cursive;
+    }
   }
   &__contents{
-    height: 200px;
     a{
       @include sidebar-word;
     }
@@ -41,8 +46,4 @@
       @include sidebar-word;
     }
   }
-}
-
-.sidebar,.sidebar2{
-  @include menu;
 }
