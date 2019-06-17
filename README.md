@@ -19,4 +19,4 @@
 |user_id|integer|null:false,foreign_key:true|
 
 ### asociation
-- belomgs_to :user
+- belongs_to :user
