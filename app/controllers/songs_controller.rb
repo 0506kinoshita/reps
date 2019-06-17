@@ -22,6 +22,7 @@ class SongsController < ApplicationController
       user_id: current_user.id
       )
     @song.save
+    redirect_to("/")
   end
 
   private

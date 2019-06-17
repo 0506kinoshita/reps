@@ -1,4 +1,8 @@
-@mixin denmoku-modal{
+@mixin btn-hover-action{
+  font-size:21px;
+  font-weight:bold;
+}
+.denmoku,.denmoku2{
   display: none;
   position: fixed;
   top:50%;
@@ -75,7 +79,6 @@
         cursor: pointer;
         font-size:20px;
         font-family:monospace;
-
         &:hover{
           font-size:25px;
           color:red;
@@ -94,9 +97,6 @@
       }
     }
   }
-}
-.denmoku,.denmoku2{
-  @include denmoku-modal;
 }
 input{
   border:none;
@@ -122,7 +122,6 @@ input{
   border:none;
   border-radius: 5px;
 }
-
 .input-btn{
   margin:8px 20px;
   padding:3px 0;
@@ -137,7 +136,6 @@ input{
     left:3px;
   }
 }
-
 .slide-modal{
   font-size:20px;
   font-family:monospace;
@@ -148,8 +146,7 @@ input{
   display: none;
   color:white;
   &:hover{
-    font-size:21px;
-    font-weight:bold;
+    @include btn-hover-action;
   }
 }
 .next-btn{
@@ -157,8 +154,7 @@ input{
   float: right;
   color:white;
   &:hover{
-    font-weight: bold;
-    font-size:21px;
+    @include btn-hover-action;
   }
 }
 .slide{
@@ -167,8 +163,7 @@ input{
 .active{
   display: block;
 }
-
-.inner{
+.denmoku-inner{
   min-height:200px;
   background: #eee;
   margin-top:30px;

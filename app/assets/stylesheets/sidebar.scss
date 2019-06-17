@@ -8,6 +8,7 @@
   font-size:14x;
   font-weight: bold;
   margin-top:30px;
+  cursor: pointer;
   &:hover{
     transition: 0.3s;
     background: white;
@@ -16,7 +17,6 @@
     font-weight: bold;
   }
 }
-
 .sidebar,.sidebar2{
   display: none;
   position: fixed;

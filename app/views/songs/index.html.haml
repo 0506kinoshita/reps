@@ -35,7 +35,6 @@
             %p1 登録した曲
             %p2 #{@count.length}曲
             = paginate @order
-
           - @songs.each do |song|
             .index__center__index__contents__inner
               .index__center__index__contents__inner__name
@@ -44,10 +43,8 @@
                 %p= song.song
               %btn-delete
                 = link_to 'DELITE',"/songs/#{song.id}", method: :delete ,data: { confirm: '削除しますか？' }
-            -# = paginate(@order)
           .paginate
             = paginate @order
-    
         = render"shared/sidebar"
       -else
         .index__center__index__contents
@@ -61,7 +58,6 @@
         = render"shared/sidebar2"
     %button.topbtn
       %i.fas.fa-arrow-up
-
 = render"shared/denmoku"
 = render"shared/denmoku2"
 = render"shared/signup"

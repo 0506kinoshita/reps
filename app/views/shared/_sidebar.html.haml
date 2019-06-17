@@ -3,7 +3,6 @@
     %h MENU
     %p 登録数 #{@count.length} 曲
   .sidebar__contents
-    .sidebar__contents__word
-      %p.modal-registe-side 曲登録
-      %p.index__image__sentence-side REPSとは
-      %p1=link_to "ログアウト", destroy_user_session_path, method: :delete
+    %p.modal-registe-side 曲登録
+    %p.index__image__sentence-side REPSとは
+    %p1=link_to "ログアウト", destroy_user_session_path, method: :delete
