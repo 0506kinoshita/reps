@@ -1,24 +1,22 @@
-# README
+# DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## userテーブル
 
-Things you may want to cover:
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null:false|
+|password|string|null:false|
+|nickname|string|null:false|
 
-* Ruby version
+### Association
+- has_many :songs
 
-* System dependencies
+## songテーブル
+|Column|Type|Options|
+|------|----|-------|
+|singer|string|null:false,foreign_key:true|
+|song|string|null:false,foreign_key:true|
+|user_id|integer|null:false,foreign_key:true|
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### asociation
+- belomgs_to :user
