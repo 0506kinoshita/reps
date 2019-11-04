@@ -1,30 +1,38 @@
 $(function() {
   $(".modal-registe,.modal-registe-side").click(function(){
     $(".denmoku").fadeIn();
+    $(".index").addClass("changed");
   });
   $(".close-modal").click(function(){
     $(".denmoku").fadeOut();
+    $(".index").removeClass("changed");
   });
 
   $(".index__image__sentence,.index__image__sentence-side").click(function(){
     $(".denmoku2").fadeIn();
+    $(".index").addClass("changed");
   });
   $(".close-modal").click(function(){
     $(".denmoku2").fadeOut();
+    $(".index").removeClass("changed");
   });
 
   $(".new-modal,.new-modal-side").click(function(){
     $(".signup").fadeIn();
+    $(".index").addClass("changed");
   });
   $(".close-modal").click(function(){
     $(".signup").fadeOut();
+    $(".index").removeClass("changed");
   });
 
   $(".rogin-madal,.rogin-madal-side").click(function(){
     $(".login").fadeIn();
+    $(".index").addClass("changed");
   });
   $(".close-modal").click(function(){
     $(".login").fadeOut();
+    $(".index").removeClass("changed");
   });
 
   $(window).scroll(function(){
